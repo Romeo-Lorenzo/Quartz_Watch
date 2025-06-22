@@ -4118,6 +4118,10 @@
 		(uuid "0c6c1e39-c679-4aa3-b39f-a143e2b5b792")
 	)
 	(no_connect
+		(at 241.3 39.37)
+		(uuid "201eec84-a89c-4201-abcb-b67e1b8bd60b")
+	)
+	(no_connect
 		(at 187.96 49.53)
 		(uuid "260d8207-78f6-49af-b594-78e71a1e4830")
 	)
@@ -4140,6 +4144,10 @@
 	(no_connect
 		(at 231.14 92.71)
 		(uuid "cc8742eb-17e4-4370-9ea1-dba55869300c")
+	)
+	(no_connect
+		(at 241.3 52.07)
+		(uuid "cca0edeb-da48-4935-b726-65c432f3c5cb")
 	)
 	(no_connect
 		(at 121.92 182.88)
@@ -5559,6 +5567,28 @@
 			)
 		)
 	)
+	(global_label "Controller Output"
+		(shape input)
+		(at 274.32 36.83 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "55fee0e6-e085-4371-83dc-c983777c1320")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 274.32 17.2142 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SYS_SWCLK"
 		(shape input)
 		(at 152.4 24.13 180)
@@ -5770,28 +5800,6 @@
 		(uuid "965c06c5-2b87-4044-ad2f-24158995cedf")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 157.1388 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COntroller Output"
-		(shape input)
-		(at 274.32 36.83 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "99ab6989-ac7a-4b0b-8d9e-3c8f3427be38")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 274.32 17.0327 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6021,28 +6029,6 @@
 			)
 		)
 	)
-	(global_label "Tim2_CH2"
-		(shape input)
-		(at 241.3 52.07 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e5d8fefc-d4b5-4ec4-8d2b-7217aad914fb")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 253.538 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "GPIO_Output_Comp"
 		(shape input)
 		(at 135.89 93.98 0)
@@ -6056,28 +6042,6 @@
 		(uuid "e61b4fac-ebf9-4672-bbf9-a98e39610c0c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 156.7759 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Tim2_CH4"
-		(shape input)
-		(at 241.3 39.37 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e651c94d-efa9-4111-bf86-d3aaa26a252b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 253.538 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7107,7 +7071,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOT65P210X110-6N"
+		(property "Footprint" "SamacSys_Parts:SOT65P210X110-6N"
 			(at 267.97 237.16 0)
 			(effects
 				(font
