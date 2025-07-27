@@ -15,7 +15,7 @@
         "copper_text_upright": false,
         "courtyard_line_width": 0.05,
         "dimension_precision": 4,
-        "dimension_units": 3,
+        "dimension_units": 2,
         "dimensions": {
           "arrow_length": 1270000,
           "extension_offset": 500000,
@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 0.0,
+          "height": 1.0,
+          "width": 1.0
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.1
         }
       },
       "diff_pair_dimensions": [
@@ -58,7 +58,44 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "annular_width|98119244|90126632|153f8492-5fcb-4c9e-ab9f-186ce5b04751|00000000-0000-0000-0000-000000000000",
+          "irrelevant"
+        ],
+        [
+          "annular_width|99830848|93797179|11ced185-4526-4877-9465-f4a4a0684884|00000000-0000-0000-0000-000000000000",
+          "irrelevant"
+        ],
+        [
+          "lib_footprint_mismatch|80500000|88090000|08fe38ab-3ed7-4146-a02b-96f294ab3a7c|00000000-0000-0000-0000-000000000000",
+          "choice"
+        ],
+        [
+          "lib_footprint_mismatch|92000000|93000000|3c2103d8-aacc-4d1f-9717-01fb989b8045|00000000-0000-0000-0000-000000000000",
+          "choice"
+        ],
+        [
+          "lib_footprint_mismatch|92950000|95950000|1e143ee2-7052-424f-9b7f-880fbdb2c19f|00000000-0000-0000-0000-000000000000",
+          "courtyard"
+        ],
+        [
+          "lib_footprint_mismatch|94050000|95150000|71a59e92-9e3d-4009-a980-b80b005e577e|00000000-0000-0000-0000-000000000000",
+          "courtyard"
+        ],
+        [
+          "lib_footprint_mismatch|94450000|95950000|893949b1-c4e8-47f0-95f1-783cdb6bab4a|00000000-0000-0000-0000-000000000000",
+          "courtyard"
+        ],
+        [
+          "lib_footprint_mismatch|96022657|93589434|e0cc654b-6465-4557-a9b4-a3b17cfc8a8b|00000000-0000-0000-0000-000000000000",
+          "courtyard"
+        ],
+        [
+          "lib_footprint_mismatch|97480724|96000000|d13fc73d-2a62-4d19-82a1-ed0a32002619|00000000-0000-0000-0000-000000000000",
+          "courtyard"
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -123,7 +160,7 @@
       "rules": {
         "max_error": 0.005,
         "min_clearance": 0.1,
-        "min_connection": 0.16,
+        "min_connection": 0.1,
         "min_copper_edge_clearance": 0.2,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.1,
@@ -474,14 +511,14 @@
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.1,
         "line_style": 0,
-        "microvia_diameter": 0.4,
+        "microvia_diameter": 0.5,
         "microvia_drill": 0.3,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.1,
-        "via_diameter": 0.4,
+        "via_diameter": 0.5,
         "via_drill": 0.3,
         "wire_width": 6
       }
