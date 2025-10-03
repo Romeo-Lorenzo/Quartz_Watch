@@ -1394,11 +1394,7 @@
 		(uuid "f324bfe2-4b67-463e-ab3b-a876a91c30ca")
 	)
 	(no_connect
-		(at 198.12 82.55)
-		(uuid "2e63d1e3-5d2d-40b7-b208-b66301a8d2c7")
-	)
-	(no_connect
-		(at 198.12 90.17)
+		(at 172.72 92.71)
 		(uuid "85ed28b4-2bba-4c48-a798-b745317a23be")
 	)
 	(no_connect
@@ -1700,7 +1696,7 @@
 		(uuid "faadba2b-071a-4e0a-845f-32643c128d92")
 	)
 	(label "KeepOn"
-		(at 198.12 92.71 0)
+		(at 198.12 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1730,14 +1726,24 @@
 		(uuid "232419fa-ef94-485f-8949-3a978187698c")
 	)
 	(label "H_Tim1"
-		(at 172.72 92.71 180)
+		(at 198.12 82.55 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "2a7b54d0-bc27-49aa-b7c1-6b6c142eac86")
+	)
+	(label "PCF_Reset"
+		(at 85.725 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "33310f5a-0a21-4280-abc7-1f3ce13b466e")
 	)
 	(label "I2C_SCL"
 		(at 172.72 95.25 180)
@@ -1838,6 +1844,16 @@
 			(justify left bottom)
 		)
 		(uuid "89639d44-0697-4fae-9117-9bd33619bb37")
+	)
+	(label "PCF_Reset"
+		(at 198.12 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8b1b92e6-3aca-408b-9cb8-27aa5cfb1f48")
 	)
 	(label "L-S press INT"
 		(at 172.72 85.09 180)
@@ -3572,6 +3588,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "PCF_Reset" input
+			(at 85.725 43.18 0)
+			(uuid "2095d2ab-8c78-40cd-8e32-0efa63716224")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
