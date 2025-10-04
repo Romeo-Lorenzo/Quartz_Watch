@@ -59,6 +59,20 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define Kill_Pin GPIO_PIN_3
+#define Kill_GPIO_Port GPIOB
+#define KeepOn_Pin GPIO_PIN_2
+#define KeepOn_GPIO_Port GPIOB
+#define Button_Pin GPIO_PIN_1
+#define Button_GPIO_Port GPIOB
+#define EXTI_Baro_Pin GPIO_PIN_8
+#define EXTI_Baro_GPIO_Port GPIOA
+#define H_on_GPIO_Pin GPIO_PIN_14
+#define H_on_GPIO_GPIO_Port GPIOB
+#define PCF2003_Reset_Pin GPIO_PIN_5
+#define PCF2003_Reset_GPIO_Port GPIOB
+#define EXTI_LS_Press_Pin GPIO_PIN_4
+#define EXTI_LS_Press_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

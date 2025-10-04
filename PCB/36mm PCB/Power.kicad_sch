@@ -2701,6 +2701,12 @@
 		(uuid "4cfb8824-5ea7-4d81-a582-f76df5f054d1")
 	)
 	(junction
+		(at 148.59 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "56809a91-64a0-450a-812a-cbf47b353f3c")
+	)
+	(junction
 		(at 185.42 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2870,7 +2876,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 40.64) (xy 149.86 40.64)
+			(xy 146.05 40.64) (xy 148.59 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2907,6 +2913,16 @@
 			(type default)
 		)
 		(uuid "56beed66-e988-4c7a-9227-bbdf9e513c5f")
+	)
+	(wire
+		(pts
+			(xy 148.59 40.64) (xy 149.86 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c8f4db7-4823-485b-a5b4-2924029fd767")
 	)
 	(wire
 		(pts
@@ -6471,7 +6487,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 146.05 40.64 0)
+		(at 148.59 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6479,7 +6495,7 @@
 		(dnp no)
 		(uuid "e14c41f3-d7e1-4493-a388-b8359850be02")
 		(property "Reference" "#FLG01"
-			(at 146.05 38.735 0)
+			(at 148.59 38.735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6488,7 +6504,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 148.59 37.084 0)
+			(at 151.13 37.084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6496,7 +6512,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 40.64 0)
+			(at 148.59 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6505,7 +6521,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 146.05 40.64 0)
+			(at 148.59 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6514,7 +6530,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 146.05 40.64 0)
+			(at 148.59 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)

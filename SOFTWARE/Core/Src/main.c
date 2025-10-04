@@ -40,6 +40,7 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
 
 I2C_HandleTypeDef hi2c1;
 
@@ -57,6 +58,7 @@ static void MX_I2C1_Init(void);
 static void MX_RADIO_Init(void);
 static void MX_RADIO_TIMER_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -102,6 +104,7 @@ int main(void)
   MX_RADIO_Init();
   MX_RADIO_TIMER_Init();
   MX_TIM2_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -165,6 +168,59 @@ void PeriphCommonClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef ConfigChannel = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Common config
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ConversionType = ADC_CONVERSION_WITH_DS;
+  hadc1.Init.SequenceLength = 1;
+  hadc1.Init.SamplingMode = ADC_SAMPLING_AT_START;
+  hadc1.Init.SampleRate = ADC_SAMPLE_RATE_16;
+  hadc1.Init.InvertOutputMode = ADC_DATA_INVERT_NONE;
+  hadc1.Init.Overrun = ADC_NEW_DATA_IS_LOST;
+  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.DownSamplerConfig.DataWidth = ADC_DS_DATA_WIDTH_12_BIT;
+  hadc1.Init.DownSamplerConfig.DataRatio = ADC_DS_RATIO_1;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  ConfigChannel.Channel = ADC_CHANNEL_TEMPSENSOR;
+  ConfigChannel.Rank = ADC_RANK_1;
+  ConfigChannel.VoltRange = ADC_VIN_RANGE_1V2;
+  ConfigChannel.CalibrationPoint.Number = ADC_CALIB_NONE;
+  ConfigChannel.CalibrationPoint.Gain = 0x00;
+  ConfigChannel.CalibrationPoint.Offset = 0x00;
+  if (HAL_ADC_ConfigChannel(&hadc1, &ConfigChannel) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
@@ -338,8 +394,24 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, Kill_Pin|KeepOn_Pin|H_on_GPIO_Pin|PCF2003_Reset_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : Kill_Pin KeepOn_Pin H_on_GPIO_Pin PCF2003_Reset_Pin */
+  GPIO_InitStruct.Pin = Kill_Pin|KeepOn_Pin|H_on_GPIO_Pin|PCF2003_Reset_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : Button_Pin EXTI_LS_Press_Pin */
+  GPIO_InitStruct.Pin = Button_Pin|EXTI_LS_Press_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PA2 */
   GPIO_InitStruct.Pin = GPIO_PIN_2;
@@ -348,6 +420,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.Alternate = GPIO_AF7_SWDIO;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : EXTI_Baro_Pin */
+  GPIO_InitStruct.Pin = EXTI_Baro_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(EXTI_Baro_GPIO_Port, &GPIO_InitStruct);
+
+  /**/
+  HAL_PWREx_DisableGPIOPullUp(PWR_GPIO_B, PWR_GPIO_BIT_3|PWR_GPIO_BIT_2|PWR_GPIO_BIT_14|PWR_GPIO_BIT_5);
+
+  /**/
+  HAL_PWREx_DisableGPIOPullDown(PWR_GPIO_B, PWR_GPIO_BIT_3|PWR_GPIO_BIT_2|PWR_GPIO_BIT_14|PWR_GPIO_BIT_5);
 
   /**/
   HAL_PWREx_EnableGPIOPullUp(PWR_GPIO_A, PWR_GPIO_BIT_2);
